@@ -1,6 +1,5 @@
 build
 *.gex
-*.dll
 *.ps*
 *.vs*
 todo.txt
