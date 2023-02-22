@@ -37,19 +37,19 @@
 			"final": "",
 			"functions": [
 				{
-					"name": "initialize_glsl",
+					"name": "glsl_init",
 					"extname": "",
 					"calltype": 12,
-					"helpline": "initialize_glsl()",
+					"helpline": "glsl_init()",
 					"hidden": false,
 					"argtypes": [],
 					"returntype": 2
 				},
 				{
-					"name": "compile_glsl",
+					"name": "glsl_compile",
 					"extname": "",
 					"calltype": 12,
-					"helpline": "compile_glsl(code)",
+					"helpline": "glsl_compile(code)",
 					"hidden": false,
 					"argtypes": [
 						1
@@ -57,28 +57,28 @@
 					"returntype": 2
 				},
 				{
-					"name": "get_glsl_code",
+					"name": "glsl_get_code",
 					"extname": "",
 					"calltype": 12,
-					"helpline": "get_glsl_code()",
+					"helpline": "glsl_get_code()",
 					"hidden": false,
 					"argtypes": [],
 					"returntype": 1
 				},
 				{
-					"name": "get_glsl_info",
+					"name": "glsl_get_info",
 					"extname": "",
 					"calltype": 12,
-					"helpline": "get_glsl_info()",
+					"helpline": "glsl_get_info()",
 					"hidden": false,
 					"argtypes": [],
 					"returntype": 1
 				},
 				{
-					"name": "compile_hlsl",
+					"name": "hlsl_compile",
 					"extname": "",
 					"calltype": 12,
-					"helpline": "compile_hlsl(code,profile)",
+					"helpline": "hlsl_compile(code,profile)",
 					"hidden": false,
 					"argtypes": [
 						1,
@@ -87,10 +87,10 @@
 					"returntype": 2
 				},
 				{
-					"name": "get_hlsl_buffer",
+					"name": "hlsl_get_buffer",
 					"extname": "",
 					"calltype": 12,
-					"helpline": "get_hlsl_buffer(pointer)",
+					"helpline": "hlsl_get_buffer(pointer)",
 					"hidden": false,
 					"argtypes": [
 						2
@@ -98,37 +98,37 @@
 					"returntype": 2
 				},
 				{
-					"name": "get_hlsl_size",
+					"name": "hlsl_get_size",
 					"extname": "",
 					"calltype": 12,
-					"helpline": "get_hlsl_size()",
+					"helpline": "hlsl_get_size()",
 					"hidden": false,
 					"argtypes": [],
 					"returntype": 2
 				},
 				{
-					"name": "get_hlsl_errors",
+					"name": "hlsl_get_errors",
 					"extname": "",
 					"calltype": 12,
-					"helpline": "get_hlsl_errors()",
+					"helpline": "hlsl_get_errors()",
 					"hidden": false,
 					"argtypes": [],
 					"returntype": 1
 				},
 				{
-					"name": "get_hlsl_uniform_count",
+					"name": "hlsl_get_uniform_count",
 					"extname": "",
 					"calltype": 12,
-					"helpline": "get_hlsl_uniform_count()",
+					"helpline": "hlsl_get_uniform_count()",
 					"hidden": false,
 					"argtypes": [],
 					"returntype": 2
 				},
 				{
-					"name": "get_hlsl_uniform_handle",
+					"name": "hlsl_get_uniform_handle",
 					"extname": "",
 					"calltype": 12,
-					"helpline": "get_hlsl_uniform_handle(id,parent)",
+					"helpline": "hlsl_get_uniform_handle(id,parent)",
 					"hidden": false,
 					"argtypes": [
 						2,
@@ -137,10 +137,10 @@
 					"returntype": 2
 				},
 				{
-					"name": "get_hlsl_uniform_name",
+					"name": "hlsl_get_uniform_name",
 					"extname": "",
 					"calltype": 12,
-					"helpline": "get_hlsl_uniform_name(id,parent)",
+					"helpline": "hlsl_get_uniform_name(id,parent)",
 					"hidden": false,
 					"argtypes": [
 						2,
@@ -149,10 +149,10 @@
 					"returntype": 1
 				},
 				{
-					"name": "get_hlsl_uniform_class",
+					"name": "hlsl_get_uniform_class",
 					"extname": "",
 					"calltype": 12,
-					"helpline": "get_hlsl_uniform_class(id,parent)",
+					"helpline": "hlsl_get_uniform_class(id,parent)",
 					"hidden": false,
 					"argtypes": [
 						2,
@@ -161,10 +161,10 @@
 					"returntype": 2
 				},
 				{
-					"name": "get_hlsl_uniform_type",
+					"name": "hlsl_get_uniform_type",
 					"extname": "",
 					"calltype": 12,
-					"helpline": "get_hlsl_uniform_type(id,parent)",
+					"helpline": "hlsl_get_uniform_type(id,parent)",
 					"hidden": false,
 					"argtypes": [
 						2,
@@ -173,10 +173,10 @@
 					"returntype": 2
 				},
 				{
-					"name": "get_hlsl_uniform_register_index",
+					"name": "hlsl_get_uniform_register_index",
 					"extname": "",
 					"calltype": 12,
-					"helpline": "get_hlsl_uniform_register_index(id,parent)",
+					"helpline": "hlsl_get_uniform_register_index(id,parent)",
 					"hidden": false,
 					"argtypes": [
 						2,
@@ -185,19 +185,19 @@
 					"returntype": 2
 				},
 				{
-					"name": "get_hlsl_uniform_register_count",
+					"name": "hlsl_get_uniform_register_count",
 					"extname": "",
 					"calltype": 11,
-					"helpline": "get_hlsl_uniform_register_count(id,parent)",
+					"helpline": "hlsl_get_uniform_register_count(id,parent)",
 					"hidden": false,
 					"argtypes": [],
 					"returntype": 2
 				},
 				{
-					"name": "get_hlsl_uniform_rows",
+					"name": "hlsl_get_uniform_rows",
 					"extname": "",
 					"calltype": 12,
-					"helpline": "get_hlsl_uniform_rows(id,parent)",
+					"helpline": "hlsl_get_uniform_rows(id,parent)",
 					"hidden": false,
 					"argtypes": [
 						2,
@@ -206,10 +206,10 @@
 					"returntype": 2
 				},
 				{
-					"name": "get_hlsl_uniform_columns",
+					"name": "hlsl_get_uniform_columns",
 					"extname": "",
 					"calltype": 12,
-					"helpline": "get_hlsl_uniform_columns(id,parent)",
+					"helpline": "hlsl_get_uniform_columns(id,parent)",
 					"hidden": false,
 					"argtypes": [
 						2,
@@ -218,10 +218,10 @@
 					"returntype": 2
 				},
 				{
-					"name": "get_hlsl_uniform_members",
+					"name": "hlsl_get_uniform_members",
 					"extname": "",
 					"calltype": 12,
-					"helpline": "get_hlsl_uniform_members(id,parent)",
+					"helpline": "hlsl_get_uniform_members(id,parent)",
 					"hidden": false,
 					"argtypes": [
 						2,

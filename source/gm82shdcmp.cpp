@@ -58,14 +58,14 @@ ShBuiltInResources resources;
 ShHandle glsl_compiler = nullptr;
 ShCompileOptions angle_options = {};
 
-GMREAL initialize_glsl() {
+GMREAL glsl_init() {
     angle_options.objectCode = true;
     angle_init();
     GenerateResources(&resources);
     return 0;
 }
 
-GMREAL compile_glsl(const char* glsl) {
+GMREAL glsl_translate(const char* glsl) {
     if (glsl_compiler != nullptr) {
         angle_destruct_compiler(glsl_compiler);
     }
@@ -73,48 +73,48 @@ GMREAL compile_glsl(const char* glsl) {
     return angle_compile(glsl_compiler, &glsl, 1, &angle_options);
 }
 
-GMSTR get_glsl_code() {
+GMSTR glsl_get_code() {
     return angle_get_object_code(glsl_compiler);
 }
 
-GMSTR get_glsl_info() {
+GMSTR glsl_get_info() {
     return angle_get_info_log(glsl_compiler);
 }
 
-GMREAL compile_hlsl(const char* hlsl, const char *profile) {
+GMREAL hlsl_compile(const char* hlsl, const char *profile) {
     size_t hlsl_len = strlen(hlsl);
     return D3DXCompileShader(hlsl, hlsl_len, nullptr, nullptr, "main",
                       profile, 0, &hlsl_compiled, &hlsl_errors, &hlsl_constants);
 }
 
-GMREAL get_hlsl_buffer(double pointer) {
+GMREAL hlsl_get_buffer(double pointer) {
     if (hlsl_compiled == nullptr) return -1;
     memcpy((void*)(int)pointer, hlsl_compiled->GetBufferPointer(), hlsl_compiled->GetBufferSize());
     return 0;
 }
 
-GMREAL get_hlsl_size() {
+GMREAL hlsl_get_size() {
     if (hlsl_compiled == nullptr) return -1;
     return hlsl_compiled->GetBufferSize();
 }
 
-GMSTR get_hlsl_errors() {
+GMSTR hlsl_get_errors() {
     if (hlsl_errors == nullptr) return "";
     return (const char*)hlsl_errors->GetBufferPointer();
 }
 
-GMREAL get_hlsl_uniform_count() {
+GMREAL hlsl_get_uniform_count() {
     D3DXCONSTANTTABLE_DESC desc;
     hlsl_constants->GetDesc(&desc);
     return desc.Constants;
 }
 
-GMREAL get_hlsl_uniform_handle(double id, double parent) {
+GMREAL hlsl_get_uniform_handle(double id, double parent) {
     return (int)hlsl_constants->GetConstant((char*)(int)parent, int(id));
 }
 
 #define GET_UNI_PROP(ty, lo, hi) \
-    ty get_hlsl_uniform_ ## lo(double id, double parent) { \
+    ty hlsl_get_uniform_ ## lo(double id, double parent) { \
         D3DXCONSTANT_DESC desc; \
         UINT count = 1;              \
         hlsl_constants->GetConstantDesc(hlsl_constants->GetConstant((char*)(int)parent, int(id)), &desc, &count); \
