@@ -9,10 +9,7 @@ if(${CMAKE_CXX_COMPILER_ID} STREQUAL "MSVC")
     set(CMAKE_CXX_FLAGS "/O2 /GS- /W2 /WX")
 endif()
 
-include_directories("C:\\Program Files (x86)\\Microsoft DirectX SDK (June 2010)\\Include")
-link_directories("C:\\Program Files (x86)\\Microsoft DirectX SDK (June 2010)\\Lib\\x86")
-
-include_directories("include")
+include_directories("include/angle" "include/dx9")
 link_directories("lib")
 
 add_library(gm82shdcmp SHARED source/gm82shdcmp.cpp)
