@@ -2,6 +2,4 @@ build
 *.gex
 *.ps*
 *.vs*
-todo.txt
-.idea
-cmake-build-*
+cache

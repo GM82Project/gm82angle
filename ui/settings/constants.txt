@@ -1,0 +1,8 @@
+qt=chr(34)
+tab_recent=0
+tab_news=1
+tab_help=2
+tab_updates=3
+anc_width1=1
+anc_width2=2
+vis_open=1
