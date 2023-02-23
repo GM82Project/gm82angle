@@ -1,6 +1,13 @@
 up=!down
 
 switch (action) {
+    case "vs2": case "ps2":
+    case "vs3": case "ps3":
+    case "shadertoy": {
+        up=TYPE!=action && !down
+        if (TYPE==action) color=$808080 else color=global.col_main
+    } break
+
     //case "lasttab": {up=(TAB!=tab_recent) && !down} break
 }
 
@@ -30,13 +37,13 @@ if (object_index==Button) {
 if (object_index==TextField) {
     if (type==1) {if (gray) color=global.col_main else color=real(text)}
     else {
-        if (active) color=merge_color(global.col_high,$ffffff,0.75)
+        if (active) color=$808080
         else {
             if (type==0 || type==2) {
                 if (gray) color=global.col_main
-                else color=merge_color(global.col_high,$ffffff,0.5)
+                else color=$808080
             } else {
-                color=merge_color(global.col_high,$ffffff,0.5)
+                color=$808080
             }
         }
     }

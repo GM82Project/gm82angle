@@ -1,4 +1,4 @@
-caption=Game Maker 8.2 Shader Compiler
+caption=
 width=696
 height=624
 snap_x=32

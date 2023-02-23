@@ -188,3 +188,10 @@ clickrect
 
 
 update_window
+load_shader
+textfield_set
+drawtooltip
+compile_shader
+textarea_draw
+textarea_set
+edit_shader

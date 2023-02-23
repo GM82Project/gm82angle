@@ -1,4 +1,7 @@
+version="Game Maker 8.2 Shader Compiler"
 qt=chr(34)
+lf=chr(14)
+crlf=chr(10)+chr(14)
 tab_recent=0
 tab_news=1
 tab_help=2

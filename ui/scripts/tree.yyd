@@ -1,6 +1,7 @@
 +util
 	|rect
 	|clickrect
+	|drawtooltip
 +theming
 	|theme_init
 	|theme_apply
@@ -8,14 +9,20 @@
 	|theme_save
 	|draw_button_ext
 +io
+	|load_shader
+	|edit_shader
+	|compile_shader
 +ui
 	|button_actions
 	|button_held
 	|button_draw
+	|textarea_set
+	|textarea_draw
 	|textfield_activate
 	|textfield_actions
-	|update_window
+	|textfield_set
 |globalvars
 |create
 |createui
 |drawui
+|update_window

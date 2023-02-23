@@ -1,11 +1,11 @@
 {
-	"name": "Game Maker 8.2 Shader Compiler",
+	"name": "Game Maker 8.2 Angle",
 	"folder": "gm82",
 	"version": "1.0",
 	"author": "Floogle",
-	"date": "22/02/2023",
+	"date": "23/02/2023",
 	"license": "Free to use, also for commercial games.",
-	"description": "Intended for use with shader tools. This extension package allows you to compile HLSL and GLSL ES shaders.",
+	"description": "Internal use only. This extension package allows you to compile HLSL and GLSL ES shaders.",
 	"helpfile": "",
 	"hidden": false,
 	"dependencies": [],
@@ -30,24 +30,24 @@
 			"constants": []
 		},
 		{
-			"filename": "gm82shdcmp.dll",
-			"origname": "build\\Release\\gm82shdcmp.dll",
+			"filename": "gm82angle.dll",
+			"origname": "build\\Release\\gm82angle.dll",
 			"kind": 1,
-			"init": "",
+			"init": "__gm82angle_init",
 			"final": "",
 			"functions": [
 				{
-					"name": "glsl_init",
+					"name": "__gm82angle_init",
 					"extname": "",
 					"calltype": 12,
-					"helpline": "glsl_init()",
-					"hidden": false,
+					"helpline": "",
+					"hidden": true,
 					"argtypes": [],
 					"returntype": 2
 				},
 				{
 					"name": "glsl_compile",
-					"extname": "",
+					"extname": "__gm82angle_glsl_compile",
 					"calltype": 12,
 					"helpline": "glsl_compile(code)",
 					"hidden": false,
@@ -58,7 +58,7 @@
 				},
 				{
 					"name": "glsl_get_code",
-					"extname": "",
+					"extname": "__gm82angle_glsl_get_code",
 					"calltype": 12,
 					"helpline": "glsl_get_code()",
 					"hidden": false,
@@ -67,7 +67,7 @@
 				},
 				{
 					"name": "glsl_get_info",
-					"extname": "",
+					"extname": "__gm82angle_glsl_get_info",
 					"calltype": 12,
 					"helpline": "glsl_get_info()",
 					"hidden": false,
@@ -76,7 +76,7 @@
 				},
 				{
 					"name": "hlsl_compile",
-					"extname": "",
+					"extname": "__gm82angle_hlsl_compile",
 					"calltype": 12,
 					"helpline": "hlsl_compile(code,profile)",
 					"hidden": false,
@@ -88,7 +88,7 @@
 				},
 				{
 					"name": "hlsl_get_buffer",
-					"extname": "",
+					"extname": "__gm82angle_hlsl_get_buffer",
 					"calltype": 12,
 					"helpline": "hlsl_get_buffer(pointer)",
 					"hidden": false,
@@ -99,7 +99,7 @@
 				},
 				{
 					"name": "hlsl_get_size",
-					"extname": "",
+					"extname": "__gm82angle_hlsl_get_size",
 					"calltype": 12,
 					"helpline": "hlsl_get_size()",
 					"hidden": false,
@@ -108,7 +108,7 @@
 				},
 				{
 					"name": "hlsl_get_errors",
-					"extname": "",
+					"extname": "__gm82angle_hlsl_get_errors",
 					"calltype": 12,
 					"helpline": "hlsl_get_errors()",
 					"hidden": false,
@@ -117,7 +117,7 @@
 				},
 				{
 					"name": "hlsl_get_uniform_count",
-					"extname": "",
+					"extname": "__gm82angle_hlsl_get_uniform_count",
 					"calltype": 12,
 					"helpline": "hlsl_get_uniform_count()",
 					"hidden": false,
@@ -126,7 +126,7 @@
 				},
 				{
 					"name": "hlsl_get_uniform_handle",
-					"extname": "",
+					"extname": "__gm82angle_hlsl_get_uniform_handle",
 					"calltype": 12,
 					"helpline": "hlsl_get_uniform_handle(id,parent)",
 					"hidden": false,
@@ -138,7 +138,7 @@
 				},
 				{
 					"name": "hlsl_get_uniform_name",
-					"extname": "",
+					"extname": "__gm82angle_hlsl_get_uniform_name",
 					"calltype": 12,
 					"helpline": "hlsl_get_uniform_name(id,parent)",
 					"hidden": false,
@@ -150,7 +150,7 @@
 				},
 				{
 					"name": "hlsl_get_uniform_class",
-					"extname": "",
+					"extname": "__gm82angle_hlsl_get_uniform_class",
 					"calltype": 12,
 					"helpline": "hlsl_get_uniform_class(id,parent)",
 					"hidden": false,
@@ -162,7 +162,7 @@
 				},
 				{
 					"name": "hlsl_get_uniform_type",
-					"extname": "",
+					"extname": "__gm82angle_hlsl_get_uniform_type",
 					"calltype": 12,
 					"helpline": "hlsl_get_uniform_type(id,parent)",
 					"hidden": false,
@@ -174,7 +174,7 @@
 				},
 				{
 					"name": "hlsl_get_uniform_register_index",
-					"extname": "",
+					"extname": "__gm82angle_hlsl_get_uniform_register_index",
 					"calltype": 12,
 					"helpline": "hlsl_get_uniform_register_index(id,parent)",
 					"hidden": false,
@@ -186,8 +186,8 @@
 				},
 				{
 					"name": "hlsl_get_uniform_register_count",
-					"extname": "",
-					"calltype": 11,
+					"extname": "__gm82angle_hlsl_get_uniform_register_count",
+					"calltype": 12,
 					"helpline": "hlsl_get_uniform_register_count(id,parent)",
 					"hidden": false,
 					"argtypes": [],
@@ -195,7 +195,7 @@
 				},
 				{
 					"name": "hlsl_get_uniform_rows",
-					"extname": "",
+					"extname": "__gm82angle_hlsl_get_uniform_rows",
 					"calltype": 12,
 					"helpline": "hlsl_get_uniform_rows(id,parent)",
 					"hidden": false,
@@ -207,7 +207,7 @@
 				},
 				{
 					"name": "hlsl_get_uniform_columns",
-					"extname": "",
+					"extname": "__gm82angle_hlsl_get_uniform_columns",
 					"calltype": 12,
 					"helpline": "hlsl_get_uniform_columns(id,parent)",
 					"hidden": false,
@@ -219,7 +219,7 @@
 				},
 				{
 					"name": "hlsl_get_uniform_members",
-					"extname": "",
+					"extname": "__gm82angle_hlsl_get_uniform_members",
 					"calltype": 12,
 					"helpline": "hlsl_get_uniform_members(id,parent)",
 					"hidden": false,
