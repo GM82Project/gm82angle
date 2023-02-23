@@ -47,7 +47,7 @@
 				},
 				{
 					"name": "glsl_compile",
-					"extname": "__gm82angle_glsl_compile",
+					"extname": "__gm82angle_glsl_translate",
 					"calltype": 12,
 					"helpline": "glsl_compile(code)",
 					"hidden": false,

@@ -5,7 +5,12 @@ HEIGHT=room_height
 
 TYPE=""
 FILENAME=""
+TEXT_IN=""
+TEXT_OUT=""
 FOCUSED=1
+
+draw_set_font(fntCode)
+H3L=string_height("|#|#|")
 
 theme_init()
 

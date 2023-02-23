@@ -39,8 +39,8 @@ i.text="PS 3.0"
 
 i=instance_create(528,72,Button)
 i.w=160
-i.action="shadertoy"
-i.text="Shadertoy"
+i.action="glsl"
+i.text="GLSL/Shadertoy"
 
 
 i=instance_create(0,112,TextArea)
@@ -115,3 +115,4 @@ i.text="Show in folder"
 //initialize all buttons
 with (Button) event_user(0)
 with (Scrollbar) event_user(0)
+with (TextArea) event_user(0)

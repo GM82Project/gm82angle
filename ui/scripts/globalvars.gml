@@ -4,7 +4,7 @@ globalvar
 
     TYPE,FILENAME,
 
-    TTY,
+    TTY,H3L,
 
     FOCUSED,
 
