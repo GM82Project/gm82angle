@@ -91,46 +91,51 @@ i.sprite=1
 
 
 i=instance_create(8,328,Button)
-i.w=240
+i.w=224
 i.action="compile"
 i.text="Compile"
+
+i=instance_create(232,328,Button)
+i.w=224
+i.action="copy intermediate"
+i.text="Copy transpiled HLSL"
 
 COMPILE_LABEL=""
 
 
-i=instance_create(0,368,TextArea)
+i=instance_create(0,400,TextArea)
 i.w=WIDTH-32
 i.h=208
 i.action="output"
 
 area=i
 
-i=instance_create(WIDTH-32,368,Button)
+i=instance_create(WIDTH-32,400,Button)
 i.action="output up"
 i.sprite=0
 
-i=instance_create(WIDTH-32,368+32,Scrollbar)
+i=instance_create(WIDTH-32,400+32,Scrollbar)
 i.scroll=area
 i.size=112
 
 SCROLL_OUT=i
 
-i=instance_create(WIDTH-32,576-32,Button)
+i=instance_create(WIDTH-32,608-32,Button)
 i.action="output down"
 i.sprite=1
 
 
-i=instance_create(8,584,Button)
+i=instance_create(8,616,Button)
 i.w=224
 i.action="copy uniform"
 i.text="Copy uniform code"
 
-i=instance_create(232,584,Button)
+i=instance_create(232,616,Button)
 i.w=224
 i.action="copy base64"
 i.text="Copy packed shader"
 
-i=instance_create(464,584,Button)
+i=instance_create(464,616,Button)
 i.w=224
 i.action="open output"
 i.text="Show in folder"

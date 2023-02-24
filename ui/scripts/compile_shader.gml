@@ -9,6 +9,8 @@ if (TYPE=="") {
     exit
 }
 
+TRANSPILED=0
+
 if (TYPE=="studio") {
     compile_studio()
     exit

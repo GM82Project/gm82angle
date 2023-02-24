@@ -10,6 +10,7 @@ switch (action) {
 
     case "edit": {edit_shader()} break
     case "compile": {compile_shader()} break
+    case "copy intermediate": {if (TRANSPILED) clipboard_set_text(TRANSPILED_TEXT)}
 
     case "copy uniform": {copy_uniforms()} break
     case "copy base64": {pack_shader()} break

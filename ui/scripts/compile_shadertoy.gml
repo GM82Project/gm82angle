@@ -61,8 +61,10 @@ if (TEXT_OUT=="") {
         gl_FragCoord=input.uv;
     ")
 
-    profile="ps_3_0"
+    TRANSPILED=1
+    TRANSPILED_TEXT=TEXT_OUT
 
+    profile="ps_3_0"
     hlsl_compile(TEXT_OUT,profile)
     error=hlsl_get_errors()
     if (error!="") {

@@ -27,6 +27,7 @@ room_caption=filename_name(fn)+" - "+version
 textarea_set("source",TEXT_IN)
 textarea_set("output","")
 COMPILED=0
+TRANSPILED=0
 COMPILE_LABEL="Shader loaded. Could not autodetect type."
 with (Button) if (action="shadertype") if (TYPE==shadertype) COMPILE_LABEL="Shader loaded. Autodetected type: "+text
 COMPILE_LABEL_COLOR=$ffffff

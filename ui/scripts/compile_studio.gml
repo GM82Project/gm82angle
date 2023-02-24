@@ -4,6 +4,7 @@ header="
 "
 glsl_compile(header+TEXT_IN)
 TEXT_OUT=glsl_get_code()
+
 error=glsl_get_info()
 if (TEXT_OUT=="") {
     COMPILE_LABEL="Transpile failed. Check errors below."
@@ -31,8 +32,10 @@ if (TEXT_OUT=="") {
     TEXT_OUT=string_replace(TEXT_OUT,"@@ PIXEL MAIN PARAMETERS @@","PS_INPUT input")
     TEXT_OUT=string_replace(TEXT_OUT,"@@ MAIN PROLOGUE @@","")
 
-    profile="ps_2_b"
+    TRANSPILED=1
+    TRANSPILED_TEXT=TEXT_OUT
 
+    profile="ps_2_b"
     hlsl_compile(TEXT_OUT,profile)
     error=hlsl_get_errors()
     if (error!="") {
