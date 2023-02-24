@@ -9,15 +9,21 @@ if (TYPE=="") {
     exit
 }
 
+str="Compiling "+filename_name(FILENAME)+"..."
+set_application_title(str)
+window_set_caption(str)
+
 TRANSPILED=0
 
 if (TYPE=="studio") {
     compile_studio()
+    set_application_title(version)
     exit
 }
 
 if (TYPE=="shadertoy") {
     compile_shadertoy()
+    set_application_title(version)
     exit
 }
 
@@ -38,3 +44,5 @@ if (!hlsl_compile(TEXT_IN,profile)) {
     textarea_set("output",output_uniforms())
     save_shader()
 }
+
+set_application_title(version)
