@@ -84,7 +84,7 @@ GMSTR __gm82angle_glsl_get_info() {
 GMREAL __gm82angle_hlsl_compile(const char* hlsl, const char *profile) {
     size_t hlsl_len = strlen(hlsl);
     return D3DXCompileShader(hlsl, hlsl_len, nullptr, nullptr, "main",
-                      profile, 0, &hlsl_compiled, &hlsl_errors, &hlsl_constants);
+                      profile, 0, &hlsl_compiled, &hlsl_errors, &hlsl_constants) == D3D_OK;
 }
 
 GMREAL __gm82angle_hlsl_get_buffer(double pointer) {
