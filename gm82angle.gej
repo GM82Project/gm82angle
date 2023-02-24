@@ -190,7 +190,10 @@
 					"calltype": 12,
 					"helpline": "hlsl_get_uniform_register_count(id,parent)",
 					"hidden": false,
-					"argtypes": [],
+					"argtypes": [
+						2,
+						2
+					],
 					"returntype": 2
 				},
 				{
