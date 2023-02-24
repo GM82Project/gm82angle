@@ -7,7 +7,7 @@ TYPE=""
 FILENAME=""
 TEXT_IN=""
 TEXT_OUT=""
-FOCUSED=1
+OUTPUT=""
 
 draw_set_font(fntCode)
 H3L=string_height("|#|#|")

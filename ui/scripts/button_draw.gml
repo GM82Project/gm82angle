@@ -1,14 +1,10 @@
 up=!down
 
 switch (action) {
-    case "vs2": case "ps2":
-    case "vs3": case "ps3":
-    case "glsl": {
-        up=TYPE!=action && !down
-        if (TYPE==action) color=$808080 else color=global.col_main
+    case "shadertype": {
+        up=TYPE!=shadertype && !down
+        if (TYPE==shadertype) color=$808080 else color=global.col_main
     } break
-
-    //case "lasttab": {up=(TAB!=tab_recent) && !down} break
 }
 
 if (object_index==Button) {

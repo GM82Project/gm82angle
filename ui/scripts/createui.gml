@@ -3,6 +3,11 @@ i.w=240
 i.action="load"
 i.text="Load shader source"
 
+i=instance_create(248,8,Button)
+i.w=240
+i.action="reload"
+i.text="Reload from disk"
+
 i=instance_create(8,72,Button)
 i.w=240
 i.action="edit"
@@ -20,27 +25,47 @@ i.type=4
 i.action="path"
 i.maxlen=46
 
-i=instance_create(528,8,Button)
-i.w=80
-i.action="vs2"
+i=instance_create(496,8,Button)
+i.w=96
+i.action="shadertype"
 i.text="VS 2.0"
-i=instance_create(608,8,Button)
-i.w=80
-i.action="ps2"
-i.text="PS 2.0"
-i=instance_create(528,40,Button)
-i.w=80
-i.action="vs3"
-i.text="VS 3.0"
-i=instance_create(608,40,Button)
-i.w=80
-i.action="ps3"
-i.text="PS 3.0"
+i.shadertype="vs2"
+i.alt="Vertex Shader version 2.a"
 
-i=instance_create(528,72,Button)
-i.w=160
-i.action="glsl"
-i.text="GLSL/Shadertoy"
+i=instance_create(592,8,Button)
+i.w=96
+i.action="shadertype"
+i.text="PS 2.0"
+i.shadertype="ps2"
+i.alt="Pixel Shader version 2.b"
+
+i=instance_create(496,40,Button)
+i.w=96
+i.action="shadertype"
+i.text="VS 3.0"
+i.shadertype="vs3"
+i.alt="Vertex Shader version 3.0"
+
+i=instance_create(592,40,Button)
+i.w=96
+i.action="shadertype"
+i.text="PS 3.0"
+i.shadertype="ps3"
+i.alt="Pixel Shader version 3.0"
+
+i=instance_create(496,72,Button)
+i.w=80
+i.action="shadertype"
+i.text="Studio"
+i.shadertype="studio"
+i.alt="Studio GLSL shader"
+
+i=instance_create(576,72,Button)
+i.w=112
+i.action="shadertype"
+i.text="Shadertoy"
+i.shadertype="shadertoy"
+i.alt="Shadertoy GLSL shader"
 
 
 i=instance_create(0,112,TextArea)

@@ -10,8 +10,15 @@
 	|draw_button_ext
 +io
 	|load_shader
+	|reload_shader
 	|edit_shader
 	|compile_shader
+	|compile_studio
+	|compile_shadertoy
+	|output_uniforms
+	|copy_uniforms
+	|pack_shader
+	|save_shader
 +ui
 	|button_actions
 	|button_held
