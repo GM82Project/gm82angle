@@ -1,6 +1,12 @@
 if (argument_count==2) {fn=argument[0] data=argument[1] ext=".txt"}
 else if (argument_count==1) {fn=argument[0] OUTPUT=FILENAME data=file_text_read_all(fn) ext=string_lower(filename_ext(fn))}
-else {fn=get_open_filename("Shader source code|*.hlsl;*.glsl;*.txt;*.shader","") OUTPUT=FILENAME data=file_text_read_all(fn) ext=string_lower(filename_ext(fn))}
+else {
+    fn=get_open_filename("Shader source code|*.hlsl;*.glsl;*.txt;*.shader","")
+    if (fn=="") exit
+    OUTPUT=FILENAME
+    data=file_text_read_all(fn)
+    ext=string_lower(filename_ext(fn))
+}
 
 textfield_set("path",fn)
 

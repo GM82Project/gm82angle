@@ -7,9 +7,9 @@ else str+="Uniform count: "+string(count)+"##"
 i=0 repeat (count) {
     switch (hlsl_get_uniform_type(i,0)) {
         case 0: type="unsupported type" break
-        case 1: type="BOOL" break
-        case 2: type="INT" break
-        case 3: type="FLOAT" break
+        case 1: type="bool" break
+        case 2: type="int" break
+        case 3: type="float" break
         case 4: type="unsupported type" break
         case 5: type="unsupported type" break
         case 6: type="unsupported type" break
@@ -18,7 +18,7 @@ i=0 repeat (count) {
         case 9: type="unsupported type" break
         case 10: type="unsupported type" break
         case 11: type="unsupported type" break
-        case 12: type="SAMPLER2D" break
+        case 12: type="sampler" break
         case 13: type="unsupported type" break
         case 14: type="unsupported type" break
         case 15: type="unsupported type" break
@@ -27,7 +27,10 @@ i=0 repeat (count) {
         case 18: type="unsupported type" break
         case 19: type="unsupported type" break
     }
-    size=hlsl_get_uniform_register_count(i,0)
+    if (type=="float" && hlsl_get_uniform_rows(i,0)==4 && hlsl_get_uniform_columns(i,0)==4) {
+        type="matrix"
+        size=1
+    } else size=hlsl_get_uniform_register_count(i,0)
     if (size>1) str+=hlsl_get_uniform_name(i,0)+"["+string(size)+"]: "+type+"#"
     else str+=hlsl_get_uniform_name(i,0)+": "+type+"#"
 i+=1}
