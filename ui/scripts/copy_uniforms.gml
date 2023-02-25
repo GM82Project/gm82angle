@@ -53,7 +53,10 @@ i=0 repeat (count) {
                 case 1: str+="shader_"+func+"_uniform_b("+name+",value)"+crlf break
                 case 2: str+="shader_"+func+"_uniform_i("+name+",value)"+crlf break
                 case 3: str+="shader_"+func+"_uniform_f("+name+",value)"+crlf break
-                case 12: str+="texture_stage_set("+string(hlsl_get_uniform_register_index(i,0))+",texture)"+crlf break
+                case 12: {
+                    if (TYPE=="vs3") str+="texture_set_stage_vertex("+name+",texture)"+crlf
+                    else str+="texture_set_stage("+name+",texture)"+crlf
+                } break
             }
         }
     }

@@ -16,7 +16,10 @@ else {
 buffer_deflate(b)
 
 str=variable_name(filename_remove_ext(filename_name(FILENAME)))
-    +" = shader_"+func+"_create_base64("+qt+crlf+"    "
+
+if (str=="") str="shader"
+
+str+=" = shader_"+func+"_create_base64("+qt+crlf+"    "
     +string_replace_all(buffer_read_base64(b,buffer_get_size(b)),crlf,crlf+"    ")
     +crlf+qt+")"
 
