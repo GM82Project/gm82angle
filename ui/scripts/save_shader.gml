@@ -15,8 +15,6 @@ else {
     exit
 }
 
-OUTPUT=filename_change_ext(FILENAME,ext)
-
-buffer_save(b,OUTPUT)
+buffer_save(b,filename_remove_ext(OUTPUT)+ext)
 
 buffer_destroy(b)

@@ -1,4 +1,4 @@
-var vertex,count,str,i,type,addressed,address;
+var vertex,count,str,i,type,addressed,address,size,mtx_type;
 
 if (!COMPILED) exit
 
@@ -15,7 +15,15 @@ i=0 repeat (count) {
     size=hlsl_get_uniform_register_count(i,0)
     if (size>1) {
         if (hlsl_get_uniform_rows(i,0)==4 && hlsl_get_uniform_columns(i,0)==4) {
-            str+="shader_"+func+"_uniform_matrix("+name+",mtx_...)"+crlf
+            mtx_type="mtx_..."
+            low=string_lower(name)
+            if (string_pos("p",low)) mtx_type="mtx_projection"
+            if (string_pos("wv",low)) mtx_type="mtx_world_view"
+            if (string_pos("wp",low)) mtx_type="mtx_world_projection"
+            if (string_pos("w",low)) mtx_type="mtx_world"
+            if (string_pos("wv",low)) mtx_type="mtx_world_view"
+            if (string_pos("wvp",low)) mtx_type="mtx_world_view_projection"
+            str+="shader_"+func+"_uniform_matrix("+name+","+mtx_type+")"+crlf
         } else {
             addressed=1
             address=0
@@ -33,7 +41,7 @@ i=0 repeat (count) {
                         case 2: str+="shader_"+func+"_uniform_i(baseAddress+"+string(address)+args+")"+crlf break
                         case 3: str+="shader_"+func+"_uniform_f(baseAddress+"+string(address)+args+")"+crlf break
                     }
-                    address+=4
+                    address+=1
                 }
             }
         }

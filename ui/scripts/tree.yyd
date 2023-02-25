@@ -2,6 +2,7 @@
 	|rect
 	|clickrect
 	|drawtooltip
+	|variable_name
 +theming
 	|theme_init
 	|theme_apply
@@ -19,6 +20,8 @@
 	|copy_uniforms
 	|pack_shader
 	|save_shader
+	|detect_texture_access_in_vs
+	|save_as
 +ui
 	|button_actions
 	|button_held

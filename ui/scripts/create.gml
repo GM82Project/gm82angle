@@ -4,7 +4,7 @@ WIDTH=room_width
 HEIGHT=room_height
 
 TYPE=""
-FILENAME=""
+FILENAME="untitled"
 TEXT_IN=""
 TEXT_OUT=""
 OUTPUT=""

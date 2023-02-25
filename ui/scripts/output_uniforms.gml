@@ -1,7 +1,7 @@
 var count,str,i,type;
 
 count=hlsl_get_uniform_count()
-str="Profile: "+profile+"#"
+str="Profile: "+profile+"#Binary size: "+string(hlsl_get_size()/1024)+"KB#"
 if (count==0) str+="No uniforms"
 else str+="Uniform count: "+string(count)+"##"
 i=0 repeat (count) {

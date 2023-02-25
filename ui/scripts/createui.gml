@@ -101,6 +101,13 @@ i.action="copy intermediate"
 i.text="Copy transpiled HLSL"
 i.alt="Copies the intermediate HLSL shader#created by Angle while transpiling GLSL#(when compiling Studio or Shadertoy shaders)"
 
+i=instance_create(464,328,Button)
+i.w=224
+i.action="saveas"
+i.text="Save as..."
+i.alt="Change the save location for the compiled shader"
+
+
 COMPILE_LABEL=""
 
 

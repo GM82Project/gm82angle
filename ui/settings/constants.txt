@@ -9,3 +9,4 @@ tab_updates=3
 anc_width1=1
 anc_width2=2
 vis_open=1
+alphanum="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_"
