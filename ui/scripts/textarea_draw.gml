@@ -1,4 +1,4 @@
-scrollf=lerp(scrollf,scroll,1/3)
+scrollf=inch(lerp(scrollf,scroll,1/3),scroll,1/200)
 
 draw_button_ext(x,y,w,h,0,$808080)
 d3d_set_scissor(x+4,y+4,w-8,h-8)

@@ -99,6 +99,7 @@ i=instance_create(232,328,Button)
 i.w=224
 i.action="copy intermediate"
 i.text="Copy transpiled HLSL"
+i.alt="Copies the intermediate HLSL shader#created by Angle while transpiling GLSL#(when compiling Studio or Shadertoy shaders)"
 
 COMPILE_LABEL=""
 
@@ -129,11 +130,13 @@ i=instance_create(8,616,Button)
 i.w=224
 i.action="copy uniform"
 i.text="Copy uniform code"
+i.alt="Copies GML code to set up every#uniform used by this shader"
 
 i=instance_create(232,616,Button)
 i.w=224
 i.action="copy base64"
 i.text="Copy packed shader"
+i.alt="Copies a compact shader declaration#for embedding in GML source code"
 
 i=instance_create(464,616,Button)
 i.w=224

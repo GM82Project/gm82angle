@@ -9,7 +9,7 @@ draw_clear(global.col_main)
 
 TTY=0
 
-draw_text_1color(8,360+6,COMPILE_LABEL,COMPILE_LABEL_COLOR,1)
+draw_text_1color(8+4,360+6+4,COMPILE_LABEL,COMPILE_LABEL_COLOR,1)
 
 with (TextArea) {
     textarea_draw()
