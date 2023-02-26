@@ -108,9 +108,6 @@ i.text="Save as..."
 i.alt="Change the save location for the compiled shader"
 
 
-COMPILE_LABEL=""
-
-
 i=instance_create(0,400,TextArea)
 i.w=WIDTH-32
 i.h=208

@@ -10,6 +10,7 @@
 	|theme_save
 	|draw_button_ext
 +io
+	|cli_compile
 	|load_shader
 	|reload_shader
 	|edit_shader
@@ -27,6 +28,7 @@
 	|button_held
 	|button_draw
 	|textarea_set
+	|textarea_get
 	|textarea_draw
 	|textfield_activate
 	|textfield_actions

@@ -8,6 +8,6 @@ info_information=
 exe_company=
 exe_product=
 exe_copyright=
-exe_description=
-exe_version=1.0.0.0
+exe_description=Anvil - the Game Maker 8.2 Shader Compiler
+exe_version=0.1.0.0
 

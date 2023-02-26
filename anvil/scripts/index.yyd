@@ -205,3 +205,5 @@ compile_studio
 variable_name
 detect_texture_access_in_vs
 save_as
+cli_compile
+textarea_get

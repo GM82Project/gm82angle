@@ -23,9 +23,9 @@ str+=" = shader_"+func+"_create_base64("+qt+crlf+"    "
     +string_replace_all(buffer_read_base64(b,buffer_get_size(b)),crlf,crlf+"    ")
     +crlf+qt+")"
 
-clipboard_set_text(str)
-
 buffer_destroy(b)
 
 COMPILE_LABEL="Packed shader copied to clipboard."
-COMPILE_LABEL_COLOR=$ffffff
+COMPILE_LABEL_COLOR=$ff00
+
+return str

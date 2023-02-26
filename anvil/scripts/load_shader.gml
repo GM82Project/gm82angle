@@ -1,3 +1,7 @@
+///load_shader(...)
+///load_shader(filename)
+///load_shader(clipboard,data)
+
 if (argument_count==2) {fn=argument[0] data=argument[1] ext=".txt"}
 else if (argument_count==1) {fn=argument[0] OUTPUT=FILENAME data=file_text_read_all(fn) ext=string_lower(filename_ext(fn))}
 else {

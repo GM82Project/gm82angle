@@ -1,4 +1,4 @@
-var vertex,count,str,i,type,addressed,address,size,mtx_type;
+var out,vertex,count,str,i,type,addressed,address,size,mtx_type;
 
 if (!COMPILED) exit
 
@@ -62,10 +62,16 @@ i=0 repeat (count) {
     }
 i+=1}
 
-if (addressed) str="//"+filename_remove_ext(filename_name(FILENAME))+crlf+"var baseAddress;"+crlf+str
-else str="//"+filename_remove_ext(filename_name(FILENAME))+crlf+str
+name=filename_remove_ext(filename_name(FILENAME))
+if (name="") name="shader"
 
-clipboard_set_text(str)
+out="//"+name+" uniforms"+crlf
+
+if (addressed) out+="var baseAddress;"+crlf
+
+out+=str
 
 COMPILE_LABEL="Shader uniforms copied to clipboard."
-COMPILE_LABEL_COLOR=$ffffff
+COMPILE_LABEL_COLOR=$ff00
+
+return out
