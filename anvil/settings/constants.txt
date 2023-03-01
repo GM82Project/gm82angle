@@ -1,4 +1,4 @@
-version="Game Maker 8.2 Shader Compiler"
+version="Anvil v0.1"
 qt=chr(34)
 lf=chr($0a)
 crlf=chr($0d)+chr($0a)
