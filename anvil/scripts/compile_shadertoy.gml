@@ -19,7 +19,7 @@ footer="
     void main() {
         gl_FragColor = vec4(0.0,0.0,0.0,1.0);
         vec4 color = vec4(1e20);
-        mainImage( color, gl_FragCoord.xy );
+        mainImage( color, gl_FragCoord.xy * iResolution.xy );
         color.w = 1.0;
         if(gl_FragColor.w<0.0) color=vec4(1.0,0.0,0.0,1.0);
         if(gl_FragColor.x<0.0) color=vec4(1.0,0.0,0.0,1.0);
