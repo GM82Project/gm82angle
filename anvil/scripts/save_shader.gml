@@ -1,4 +1,4 @@
-if (OUTPUT=="") exit
+if (!COMPILED) exit
 
 b=buffer_create()
 buffer_set_size(b,hlsl_get_size())
