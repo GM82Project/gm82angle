@@ -94,6 +94,7 @@ i=instance_create(8,328,Button)
 i.w=224
 i.action="compile"
 i.text="Compile"
+i.alt="Compile the shader and save the binary next to the source file (or in the save-as location if set)"
 
 i=instance_create(232,328,Button)
 i.w=224
