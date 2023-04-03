@@ -9,3 +9,7 @@ if (keyboard_check_pressed(ord("V")) && keyboard_check(vk_control)) {
     if (clipboard_has_text())
         load_shader("Pasted from clipboard",clipboard_get_text())
 }
+
+if (window_is_minimized()) {room_speed=5 set_automatic_draw(0)}
+else if (!mouse_in_window()) {room_speed=10 set_automatic_draw(0)}
+else {room_speed=60 set_automatic_draw(1)}
