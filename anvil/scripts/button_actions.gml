@@ -1,3 +1,5 @@
+if (argument_count) action=argument[0]
+
 switch (action) {
     case "load": {load_shader()} break
     case "reload": {
