@@ -31,7 +31,7 @@ i=0 repeat (count) {
             if ((string_pos("color",string_lower(name)) || string_pos("colour",string_lower(name))) && hlsl_get_uniform_columns(i,0)==4) {
                 repeat (size) {
                     str+="shader_"+func+"_uniform_color(baseAddress+"+string(address)+",color,alpha)"+crlf
-                    address+=4
+                    address+=1
                 }
             } else {
                 repeat (size) {
