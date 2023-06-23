@@ -1,4 +1,4 @@
-gm82_version=4
+gm82_version=5
 gameid=638948978
 
 info_author=
@@ -11,3 +11,13 @@ exe_copyright=
 exe_description=Anvil - the Game Maker 8.2 Shader Compiler
 exe_version=0.1.0.0
 
+has_backgrounds=1
+has_datafiles=0
+has_fonts=1
+has_objects=1
+has_paths=0
+has_scripts=1
+has_sounds=0
+has_sprites=1
+has_timelines=0
+has_triggers=0
