@@ -1,4 +1,4 @@
-if (!COMPILED) exit
+if (!COMPILED || CLIPBOARD) exit
 
 b=buffer_create()
 buffer_set_size(b,hlsl_get_size())

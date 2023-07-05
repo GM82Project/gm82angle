@@ -2,7 +2,9 @@
 ///load_shader(filename)
 ///load_shader(clipboard,data)
 
-if (argument_count==2) {fn=argument[0] data=argument[1] ext=".txt"}
+CLIPBOARD=0
+
+if (argument_count==2) {fn=argument[0] data=argument[1] ext=".txt" CLIPBOARD=1}
 else if (argument_count==1) {fn=argument[0] OUTPUT=fn data=file_text_read_all(fn) ext=string_lower(filename_ext(fn))}
 else {
     fn=get_open_filename("Shader source code|*.hlsl;*.glsl;*.txt;*.shader","")

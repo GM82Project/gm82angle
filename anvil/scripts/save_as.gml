@@ -14,6 +14,7 @@ if (OUTPUT=="") OUTPUT=filename_remove_ext(FILENAME)+ext
 dir=OUTPUT
 
 if (OUTPUT==ext) {
+    CLIPBOARD=1
     COMPILE_LABEL="Output not set"
     COMPILE_LABEL_COLOR=$ffffff
     exit
@@ -23,5 +24,7 @@ if (string_length(dir)>50) dir=string_copy(dir,1,25)+"..."+string_copy(dir,strin
 
 COMPILE_LABEL="Output set: "+dir
 COMPILE_LABEL_COLOR=$ffffff
+
+CLIPBOARD=0
 
 if (COMPILED) save_shader()
