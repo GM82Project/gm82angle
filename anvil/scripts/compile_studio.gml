@@ -12,9 +12,13 @@ if (TEXT_OUT=="") {
     if (string_pos("gl_Position",TEXT_IN)) COMPILE_LABEL="Compile failed. Is this a vertex shader?"
     textarea_set("output",error)
 } else {
+    studio_varyings=""
+
+    if (string_pos("_v_vTexcoord",TEXT_OUT)) studio_varyings+="_v_vTexcoord.xy=input.uv;"+crlf
+    if (string_pos("_v_vColour",TEXT_OUT)) studio_varyings+="_v_vColour=input.color;"+crlf
+
     TEXT_OUT=string_replace(TEXT_OUT,"@@ PIXEL OUTPUT @@","
     struct PS_INPUT {
-        float4 position: POSITION0;
         float2 uv: TEXCOORD0;
         float4 color: COLOR;
     };
@@ -28,9 +32,13 @@ if (TEXT_OUT=="") {
         output.color=gl_Color[0];
         return output;
     }
+    
+    void populateStudioVaryings(PS_INPUT input) {
+"+studio_varyings+"
+    }
     ")
     TEXT_OUT=string_replace(TEXT_OUT,"@@ PIXEL MAIN PARAMETERS @@","PS_INPUT input")
-    TEXT_OUT=string_replace(TEXT_OUT,"@@ MAIN PROLOGUE @@","")
+    TEXT_OUT=string_replace(TEXT_OUT,"@@ MAIN PROLOGUE @@","populateStudioVaryings(input);")
 
     TRANSPILED=1
     TRANSPILED_TEXT=TEXT_OUT
