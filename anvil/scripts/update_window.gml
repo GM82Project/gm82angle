@@ -9,6 +9,7 @@ if (keyboard_check_pressed(ord("V")) && keyboard_check(vk_control)) {
     if (clipboard_has_text())
         load_shader("Pasted from clipboard",clipboard_get_text())
 }
+
 if (keyboard_check_pressed(vk_f5)) {
     button_actions("reload")
     button_actions("compile")

@@ -3,7 +3,8 @@ if (argument_count) action=argument[0]
 switch (action) {
     case "load": {load_shader()} break
     case "reload": {
-        if (FILENAME!="" && file_exists(FILENAME)) reload_shader()
+        if (CLIPBOARD) {load_shader("Pasted from clipboard",clipboard_get_text())}
+        else if (FILENAME!="" && file_exists(FILENAME)) reload_shader()
     } break
     case "shadertype": {TYPE=shadertype} break
 

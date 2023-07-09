@@ -23,6 +23,7 @@
 	|save_shader
 	|detect_texture_access_in_vs
 	|save_as
+	|clipboard_cleanup
 +ui
 	|button_actions
 	|button_held

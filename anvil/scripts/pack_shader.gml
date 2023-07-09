@@ -1,3 +1,5 @@
+var source,p;
+
 if (!COMPILED) exit
 
 b=buffer_create()
@@ -17,6 +19,18 @@ else {
 
 buffer_deflate(b)
 
+source=TEXT_IN
+
+//remove excess indentation
+while (string_count(crlf+"    ",source) >= string_count(crlf,source)-1)
+    source=string_replace_all(source,crlf+"    ",crlf)
+
+//remove block comments (we can't have a block comment in a block comment!
+while (string_pos("*/",source)>string_pos("/*",source)) {
+    p=string_pos("/*",source)
+    source=string_delete(source,p,string_pos("*/",source)+2-p)
+}
+
 name=filename_remove_ext(filename_name(FILENAME))
 if (name="") str=""
 else str="/*"+crlf+"    "+name+crlf+"*/"+crlf+crlf
@@ -24,7 +38,7 @@ else str="/*"+crlf+"    "+name+crlf+"*/"+crlf+crlf
 str+="return shader_"+func+"_create_base64("+qt+crlf+"    "
     +string_replace_all(buffer_read_base64(b,buffer_get_size(b)),crlf,crlf+"    ")
     +crlf+qt+")"+crlf+crlf+"/*"+crlf+"    "
-    +string_replace_all(TEXT_IN,crlf,crlf+"    ")+crlf+"*/"
+    +string_replace_all(source,crlf,crlf+"    ")+crlf+"*/"
 
 buffer_destroy(b)
 
