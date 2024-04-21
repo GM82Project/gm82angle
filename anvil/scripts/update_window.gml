@@ -16,5 +16,11 @@ if (keyboard_check_pressed(vk_f5)) {
 }
 
 if (window_is_minimized()) {room_speed=5 set_automatic_draw(0)}
-else if (!mouse_in_window()) {room_speed=10 set_automatic_draw(0)}
-else {if (room_speed!=60) TextArea.osf=-1 room_speed=60 set_automatic_draw(1)}
+else if (!mouse_in_window()) {room_speed=10 MOUSE_X=-999 MOUSE_Y=-999}
+else {
+    MOUSE_X=window_mouse_get_x()
+    MOUSE_Y=window_mouse_get_y()
+    if (room_speed!=60) TextArea.osf=-1
+    room_speed=60
+    set_automatic_draw(1)
+}
