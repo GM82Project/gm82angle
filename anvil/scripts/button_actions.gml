@@ -17,6 +17,9 @@ switch (action) {
 
     case "saveas": {save_as()} break
 
+    case "tempv": {copy_vs()} break
+    case "tempp": {copy_ps()} break
+
     case "copy uniform": {clipboard_set_text(copy_uniforms())} break
     case "copy base64": {clipboard_set_text(pack_shader())} break
 

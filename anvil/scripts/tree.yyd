@@ -39,3 +39,5 @@
 |createui
 |drawui
 |update_window
+|copy_ps
+|copy_vs

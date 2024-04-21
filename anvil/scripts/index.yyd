@@ -208,3 +208,5 @@ save_as
 cli_compile
 textarea_get
 clipboard_cleanup
+copy_ps
+copy_vs

@@ -98,15 +98,28 @@ i.alt="Compile the shader and save the binary next to the source file (or in the
 
 i=instance_create(232,328,Button)
 i.w=224
+i.action="saveas"
+i.text="Save as..."
+i.alt="Change the save location for the compiled shader"
+
+
+i=instance_create(464,328,Button)
+i.w=224
 i.action="copy intermediate"
 i.text="Copy transpiled HLSL"
 i.alt="Copies the intermediate HLSL shader#created by Angle while transpiling GLSL#(when compiling Studio or Shadertoy shaders)"
 
-i=instance_create(464,328,Button)
-i.w=224
-i.action="saveas"
-i.text="Save as..."
-i.alt="Change the save location for the compiled shader"
+i=instance_create(464,360,Button)
+i.w=112
+i.action="tempv"
+i.text="Template V"
+i.alt="Copy a Vertex Shader template"
+
+i=instance_create(576,360,Button)
+i.w=112
+i.action="tempp"
+i.text="Template P"
+i.alt="Copy a Pixel Shader template"
 
 
 i=instance_create(0,400,TextArea)
