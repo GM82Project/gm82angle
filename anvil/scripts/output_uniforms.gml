@@ -28,7 +28,7 @@ i=0 repeat (count) {
         case 19: type="unsupported type" break
     }
     if (type=="float" && hlsl_get_uniform_rows(i,0)==4 && hlsl_get_uniform_columns(i,0)==4) {
-        type="matrix"
+        type="matrix[4x"+string(hlsl_get_uniform_register_count(i,0))+"]"
         size=1
     } else size=hlsl_get_uniform_register_count(i,0)
     if (size>1) str+=hlsl_get_uniform_name(i,0)+"["+string(size)+"]: "+type+"#"
