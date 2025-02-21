@@ -18,18 +18,17 @@ textfield_set("path",fn)
 
 FILENAME=fn
 TEXT_IN=string_replace_all(data,chr(vk_tab),"    ")
-TYPE=""
 
 if (ext==".shader") {
     TEXT_IN=string_delete(TEXT_IN,1,string_pos("//######################_==_YOYO_SHADER_MARKER_==_######################@~",TEXT_IN)+73)
     TYPE="studio"
 }
 if (ext==".glsl") TYPE="shadertoy"
-if (ext==".hlsl") {
+if (ext==".hlsl" and TYPE=="") {
     if (string_count("POSITION",TEXT_IN)>1) {
         if (detect_texture_access_in_vs(TEXT_IN)) TYPE="vs3"
-        else TYPE="vs2"
-    } else TYPE="ps2"
+        else if (TYPE!="vs3") TYPE="vs2"
+    } else if (TYPE!="ps3") TYPE="ps2"
 }
 if (ext==".txt") {
     if (string_pos("mainImage",TEXT_IN)) TYPE="shadertoy"
@@ -37,8 +36,8 @@ if (ext==".txt") {
     else {
         if (string_count("POSITION",TEXT_IN)>1) {
             if (detect_texture_access_in_vs(TEXT_IN)) TYPE="vs3"
-            else TYPE="vs2"
-        } else TYPE="ps2"
+            else if (TYPE!="vs3") TYPE="vs2"
+        } else if (TYPE!="ps3") TYPE="ps2"
     }
 }
 
