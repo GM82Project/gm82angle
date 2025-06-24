@@ -28,7 +28,10 @@ if (ext==".hlsl" and TYPE=="") {
     if (string_count("POSITION",TEXT_IN)>1) {
         if (detect_texture_access_in_vs(TEXT_IN)) TYPE="vs3"
         else if (TYPE!="vs3") TYPE="vs2"
-    } else if (TYPE!="ps3") TYPE="ps2"
+    } else {
+        if (string_count("VPOS",TEXT_IN)>0) TYPE="ps3"
+        if (TYPE!="ps3") TYPE="ps2"
+    }
 }
 if (ext==".txt") {
     if (string_pos("mainImage",TEXT_IN)) TYPE="shadertoy"
@@ -37,7 +40,10 @@ if (ext==".txt") {
         if (string_count("POSITION",TEXT_IN)>1) {
             if (detect_texture_access_in_vs(TEXT_IN)) TYPE="vs3"
             else if (TYPE!="vs3") TYPE="vs2"
-        } else if (TYPE!="ps3") TYPE="ps2"
+        } else {
+            if (string_count("VPOS",TEXT_IN)>0) TYPE="ps3"
+            if (TYPE!="ps3") TYPE="ps2"
+        }
     }
 }
 
