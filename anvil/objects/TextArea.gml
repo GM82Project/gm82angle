@@ -31,7 +31,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-scrollf=inch(lerp(scrollf,scroll,1/3),scroll,1/200)
+scrollf=approach(lerp(scrollf,scroll,1/3),scroll,1/200)
 
 if (osf!=scrollf) {
     surface_set(string(id),w-8,h-8)

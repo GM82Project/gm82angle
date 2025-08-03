@@ -4,7 +4,7 @@ if (!COMPILED) exit
 
 b=buffer_create()
 buffer_set_size(b,hlsl_get_size())
-hlsl_get_buffer(buffer_get_address(b,0))
+hlsl_get_buffer(buffer_get_address(b))
 
 buffer_set_pos(b,0)
 
