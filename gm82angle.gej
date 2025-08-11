@@ -3,7 +3,7 @@
 	"folder": "gm82",
 	"version": "1.0",
 	"author": "Floogle",
-	"date": "23/02/2023",
+	"date": "11/08/2025",
 	"license": "Free to use, also for commercial games.",
 	"description": "Internal use only. This extension package allows you to compile HLSL and GLSL ES shaders.",
 	"helpfile": "",
@@ -36,15 +36,6 @@
 			"init": "__gm82angle_init",
 			"final": "",
 			"functions": [
-				{
-					"name": "__gm82angle_init",
-					"extname": "",
-					"calltype": 12,
-					"helpline": "",
-					"hidden": true,
-					"argtypes": [],
-					"returntype": 2
-				},
 				{
 					"name": "glsl_compile",
 					"extname": "__gm82angle_glsl_translate",
@@ -98,6 +89,15 @@
 					"returntype": 2
 				},
 				{
+					"name": "hlsl_get_errors",
+					"extname": "__gm82angle_hlsl_get_errors",
+					"calltype": 12,
+					"helpline": "hlsl_get_errors()",
+					"hidden": false,
+					"argtypes": [],
+					"returntype": 1
+				},
+				{
 					"name": "hlsl_get_size",
 					"extname": "__gm82angle_hlsl_get_size",
 					"calltype": 12,
@@ -107,13 +107,28 @@
 					"returntype": 2
 				},
 				{
-					"name": "hlsl_get_errors",
-					"extname": "__gm82angle_hlsl_get_errors",
+					"name": "hlsl_get_uniform_class",
+					"extname": "__gm82angle_hlsl_get_uniform_class",
 					"calltype": 12,
-					"helpline": "hlsl_get_errors()",
+					"helpline": "hlsl_get_uniform_class(id,parent)",
 					"hidden": false,
-					"argtypes": [],
-					"returntype": 1
+					"argtypes": [
+						2,
+						2
+					],
+					"returntype": 2
+				},
+				{
+					"name": "hlsl_get_uniform_columns",
+					"extname": "__gm82angle_hlsl_get_uniform_columns",
+					"calltype": 12,
+					"helpline": "hlsl_get_uniform_columns(id,parent)",
+					"hidden": false,
+					"argtypes": [
+						2,
+						2
+					],
+					"returntype": 2
 				},
 				{
 					"name": "hlsl_get_uniform_count",
@@ -137,6 +152,18 @@
 					"returntype": 2
 				},
 				{
+					"name": "hlsl_get_uniform_members",
+					"extname": "__gm82angle_hlsl_get_uniform_members",
+					"calltype": 12,
+					"helpline": "hlsl_get_uniform_members(id,parent)",
+					"hidden": false,
+					"argtypes": [
+						2,
+						2
+					],
+					"returntype": 2
+				},
+				{
 					"name": "hlsl_get_uniform_name",
 					"extname": "__gm82angle_hlsl_get_uniform_name",
 					"calltype": 12,
@@ -149,22 +176,10 @@
 					"returntype": 1
 				},
 				{
-					"name": "hlsl_get_uniform_class",
-					"extname": "__gm82angle_hlsl_get_uniform_class",
+					"name": "hlsl_get_uniform_register_count",
+					"extname": "__gm82angle_hlsl_get_uniform_register_count",
 					"calltype": 12,
-					"helpline": "hlsl_get_uniform_class(id,parent)",
-					"hidden": false,
-					"argtypes": [
-						2,
-						2
-					],
-					"returntype": 2
-				},
-				{
-					"name": "hlsl_get_uniform_type",
-					"extname": "__gm82angle_hlsl_get_uniform_type",
-					"calltype": 12,
-					"helpline": "hlsl_get_uniform_type(id,parent)",
+					"helpline": "hlsl_get_uniform_register_count(id,parent)",
 					"hidden": false,
 					"argtypes": [
 						2,
@@ -185,18 +200,6 @@
 					"returntype": 2
 				},
 				{
-					"name": "hlsl_get_uniform_register_count",
-					"extname": "__gm82angle_hlsl_get_uniform_register_count",
-					"calltype": 12,
-					"helpline": "hlsl_get_uniform_register_count(id,parent)",
-					"hidden": false,
-					"argtypes": [
-						2,
-						2
-					],
-					"returntype": 2
-				},
-				{
 					"name": "hlsl_get_uniform_rows",
 					"extname": "__gm82angle_hlsl_get_uniform_rows",
 					"calltype": 12,
@@ -209,10 +212,10 @@
 					"returntype": 2
 				},
 				{
-					"name": "hlsl_get_uniform_columns",
-					"extname": "__gm82angle_hlsl_get_uniform_columns",
+					"name": "hlsl_get_uniform_type",
+					"extname": "__gm82angle_hlsl_get_uniform_type",
 					"calltype": 12,
-					"helpline": "hlsl_get_uniform_columns(id,parent)",
+					"helpline": "hlsl_get_uniform_type(id,parent)",
 					"hidden": false,
 					"argtypes": [
 						2,
@@ -221,15 +224,31 @@
 					"returntype": 2
 				},
 				{
-					"name": "hlsl_get_uniform_members",
-					"extname": "__gm82angle_hlsl_get_uniform_members",
+					"name": "__gm82angle_init",
+					"extname": "",
 					"calltype": 12,
-					"helpline": "hlsl_get_uniform_members(id,parent)",
-					"hidden": false,
-					"argtypes": [
-						2,
-						2
-					],
+					"helpline": "",
+					"hidden": true,
+					"argtypes": [],
+					"returntype": 2
+				}
+			],
+			"constants": []
+		},
+		{
+			"filename": "gm82angle.gml",
+			"origname": "source\\gm82angle.gml",
+			"kind": 2,
+			"init": "__gm82angle_init",
+			"final": "",
+			"functions": [
+				{
+					"name": "__gm82angle_init",
+					"extname": "",
+					"calltype": 2,
+					"helpline": "",
+					"hidden": true,
+					"argtypes": null,
 					"returntype": 2
 				}
 			],
