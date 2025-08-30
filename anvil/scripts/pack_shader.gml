@@ -36,7 +36,7 @@ if (name="") str=""
 else str="/*"+crlf+"    "+name+crlf+"*/"+crlf+crlf
 
 str+="return shader_"+func+"_create_base64("+qt+crlf+"    "
-    +string_replace_all(buffer_read_base64(b,buffer_get_size(b)),crlf,crlf+"    ")
+    +string_replace_all(buffer_encode_base64(b,buffer_get_size(b)),crlf,crlf+"    ")
     +crlf+qt+")"+crlf+crlf+"/*"+crlf+"    "
     +string_replace_all(source,crlf,crlf+"    ")+crlf+"*/"
 
