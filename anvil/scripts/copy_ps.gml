@@ -11,9 +11,9 @@ SamplerState rSampler: register(s0);
 
 PS_OUTPUT main(PS_INPUT input) {
     PS_OUTPUT output;
-
+    
     float4 albedo = tex2D(rSampler, input.texcoord);
-
+    
     output.color = albedo * input.color;
     
     return output;

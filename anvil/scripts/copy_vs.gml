@@ -15,9 +15,9 @@ matrix rMatrixWVP;
 VS_OUTPUT main(VS_INPUT input) {
     VS_OUTPUT output;
     
-    output.position = mul(rMatrixWVP, input.position);   
-    output.texcoord = input.texcoord;   
+    output.position = mul(rMatrixWVP, input.position);
+    output.texcoord = input.texcoord;
     output.color = input.color;
-   
+    
     return output;
 }")
